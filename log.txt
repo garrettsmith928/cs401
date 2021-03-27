@@ -1,0 +1,72 @@
+now - DEBUG --> Got a connection 
+now - INFO  --> email: garrettsmith928@u.boisestate.edu 
+now - INFO  --> password: 123 
+now - INFO  --> name: Garrett Smith 
+now - INFO  --> phone: 2088618102 
+now - INFO  --> address: 99 E Parkway Drive, Boise, ID, 83706 
+now - INFO  --> Status: 1 
+now - DEBUG --> Got a connection 
+now - INFO  --> email: 1231245 
+now - INFO  --> password: 123 
+now - INFO  --> name:  
+now - INFO  --> phone:  
+now - INFO  --> address: , , ,  
+now - INFO  --> Status: 1 
+now - DEBUG --> Got a connection 
+now - INFO  --> email: test 
+now - INFO  --> password: 1 
+now - INFO  --> name: gary 
+now - INFO  --> phone:  
+now - INFO  --> address:  
+now - INFO  --> Status: 1 
+now - DEBUG --> Got a connection 
+now - INFO  --> email: testgin 
+now - INFO  --> password: 123 
+now - INFO  --> name: gary 
+now - INFO  --> phone:  
+now - INFO  --> address:  
+now - INFO  --> Status: 1 
+now - DEBUG --> Got a connection 
+now - INFO  --> test 1 
+now - INFO  --> user found!Array
+(
+    [total] => 1
+    [0] => 1
+)
+ 
+now - DEBUG --> Got a connection 
+now - DEBUG --> Got a connection 
+now - INFO  --> email: garrettsmith928@u.boisestate.edu 
+now - INFO  --> password:  
+now - INFO  --> name: Garrett Smith 
+now - INFO  --> phone: 2088618102 
+now - INFO  --> address: 99 E Parkway Drive, Boise, ID, 83706 
+now - INFO  --> Status: 1 
+now - DEBUG --> Got a connection 
+now - INFO  --> email: garrettsmith928@u.boisestate.edu 
+now - INFO  --> password:  
+now - INFO  --> name: Garrett Smith 
+now - INFO  --> phone: 2088618102 
+now - INFO  --> address: 99 E Parkway Drive, Boise, ID, 83706 
+now - INFO  --> Status:  
+now - DEBUG --> Got a connection 
+now - INFO  --> email: garrettsmith928@u.boisestate.edu 
+now - INFO  --> password:  
+now - INFO  --> name: Garrett Smith 
+now - INFO  --> phone: 2088618102 
+now - INFO  --> address: 99 E Parkway Drive, Boise, ID, 83706 
+now - INFO  --> Status: 1 
+now - DEBUG --> Got a connection 
+now - INFO  --> email: garrettsmith928@u.boisestate.edu 
+now - INFO  --> password:  
+now - INFO  --> name: Garrett Smith 
+now - INFO  --> phone: 2088618102 
+now - INFO  --> address: 99 E Parkway Drive, Boise, ID, 83706 
+now - INFO  --> Status: 1 
+now - DEBUG --> Got a connection 
+now - INFO  --> email: garrettsmith928@u.boisestate.edu 
+now - INFO  --> password:  
+now - INFO  --> name: Garrett Smith 
+now - INFO  --> phone: 2088618102 
+now - INFO  --> address: 99 E Parkway Drive, Boise, ID, 83706 
+now - INFO  --> Status: 1 

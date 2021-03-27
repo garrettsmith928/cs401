@@ -1,0 +1,529 @@
+/* Variables */
+:root {
+    --main-color: #3f5746;
+	--secondary-color: #fff996;
+	--dark-color:#3c5443;
+	--theme-color:#fff;
+	--theme-reverse-color:#000;
+}
+
+/* Color Holder
+
+    --main-color: #3f5746;
+	--secondary-color: #fff996;
+	
+*/
+
+/* All */
+a {
+	text-decoration: none;
+}
+
+a:link {
+  color: var(--secondary-color);
+}
+
+a:visited {
+  color: var(--secondary-color);
+}
+
+a:hover {
+  color: var(--theme-color);
+}
+
+.ratio1 {
+	width: 100%;
+	padding-top: 45%;
+	position: relative;
+}
+
+.ratio2 {
+	width: 45%;
+	padding-top: 30%;
+	position: relative;
+	margin: 2.5%;
+	float: left;
+	margin-bottom: 0;
+}
+
+.pageSplit {
+	width: 48%;
+	position: relative;
+	float: left;
+	margin: 1%;
+}
+
+.splitCrop {
+	max-width: 100%;
+}
+
+.ratioContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+}
+
+.imgContainer {
+	position: relative;
+	object-fit: cover;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	float: none;
+}
+
+.imgCrop {
+	float: none;
+	object-fit: cover;
+	position: absolute;
+	width: 100%;
+	min-height: 100%;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.textCenteredOverImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Body */
+body {
+	width: 90%;
+	margin: auto;
+	min-width: 1080px;
+}
+
+html {
+	background-color: var(--theme-color);
+}
+
+/* Nav */
+.arrow {
+	line-height: 650px;
+	position: absolute;
+	text-align: center;
+	list-style: none;
+	height: 100%;
+	width: 5%;
+}
+
+.arrow:hover {
+	background-color: #FF0000;
+	color: white;
+}
+
+#leftArrow {
+	background: linear-gradient(90deg, rgba(0,0,0,.4), rgba(0,0,0,.01));
+	left: 0px;
+}
+
+#rightArrow {
+	background: linear-gradient(-90deg, rgba(0,0, 0,.4), rgba(0,0,0,.01));
+	right: 0px;
+}
+
+.locations {
+	margin: 15px 10%;
+}
+
+.orders {
+	background-color: var(--main-color);
+	margin: 15px 10%;
+}
+
+.bar {
+	z-index: 5;
+	height: 75px;
+	width: 100%;
+}
+
+#topBar {
+	position: relative;
+    background-color: var(--theme-color);
+	z-index: 5;
+}
+
+#topBar li {
+	width: 12%;
+	float: right;
+	margin-right: 5%;
+	background-color: var(--main-color);
+	border-radius: 7px;
+	background: linear-gradient(-180deg, var(--main-color) 5%, rgba(80,115, 80,.99) 25%, var(--main-color) 50%, rgba(40,80,40,.99));
+}
+
+#login li {
+	background: none;
+	border: none;
+	margin-right: 0%;
+}
+
+#topBar li:hover {
+	background: linear-gradient(-180deg, var(--main-color) 5%, rgba(100,145, 100,.99) 25%, var(--main-color) 50%, rgba(50,90,50,.99));
+	background-color: var(--theme-reverse-color);
+	color: white;
+}
+
+#name {
+	width: 150px;
+}
+
+#botBar {
+	background-color: var(--main-color);
+}
+
+#botBar ul {
+	margin: 0 0 0 15%;
+}
+
+#botBar li {
+	width: 10%;
+}
+
+#icon {
+	position: relative;
+	top: 20px;
+}
+
+#name {
+	position: relative;
+	bottom: 30px;
+}
+
+ul {
+	display: in-line;
+	white-space: nowrap;
+	margin: 0 0 0 0;
+}
+
+li {
+	font-size: 20px;
+	text-align: center;
+	list-style: none;
+	float: left;
+	display: in-line;
+	height: 45px;
+	line-height: 45px;
+	margin: 15px 1%;
+	min-width: auto;
+	color: var(--secondary-color);
+	font-family: Arial, sans-serif;
+}
+
+li:hover {
+  color: var(--secondary-color);
+}
+
+/* Home */
+.imageContainerMenu {
+	position: relative;
+	object-fit: cover;
+	overflow: hidden;
+	width: 50%;
+	height: 45%;
+	background-color: var(--theme-color);
+	float: left;
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 5vw;
+	font-family: Arial, sans-serif;
+}
+
+
+
+.pageFill {
+	height: 75px;
+	background-color: var(--main-color);
+}
+
+/* Menu */
+.menuTopLevel {
+	height: 50%;
+	width: 50%;
+	font-family: Arial, sans-serif;
+}
+
+#menuLink a:link,
+#menuLink a:visited {
+	font-size: 2vw;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+#viewFullMenu {
+	position: relative;
+	object-fit: cover;
+	overflow: hidden;
+	width: 100%;
+	height: 10%;
+	float: left;
+	background-color: var(--theme-reverse-color);
+	font-family: Arial, sans-serif;
+}
+
+#viewFullMenuText {
+	font-size: 2vw;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+/* Gallery */
+
+.imageTextContainer {
+	position: absolute;
+	height: 50px;
+	width: 100%;
+	background-color: var(--theme-reverse-color);
+	bottom: 0;
+}
+
+#galleryImageTitle {
+	font-size: 20px;
+	color: var(--theme-color);
+}
+
+/* Catering */
+#cateringTextBox {
+	text-align: center;
+	font-size: 50px;
+	font-family: Arial, sans-serif;
+	border-radius: 7px;
+	color: var(--main-color);
+	border-color: var(--main-color);
+	border-style: solid;
+}
+
+.cateringOrderButton {
+	border-radius: 25px;
+	position: relative;
+	float: left;
+	margin: 5%;
+	width: 40%;
+	height: 50px;
+	background-color: var(--main-color);
+	color: var(--secondary-color);
+	background: linear-gradient(-180deg, var(--main-color) 5%, rgba(80,115, 80,.99) 25%, var(--main-color) 50%, rgba(40,80,40,.99));
+}
+
+.cateringOrderButton:hover {
+	background: linear-gradient(-180deg, var(--main-color) 5%, rgba(100,145, 100,.99) 25%, var(--main-color) 50%, rgba(50,90,50,.99));
+	background-color: var(--theme-reverse-color);
+	color: white;
+}
+
+#cateringButtonText {
+	font-size: 20px;
+}
+
+#cateringParagraph {
+	font-size: 20px;
+}
+
+/* Daily Deal */
+.topSpacer {
+	height: 10px;
+	width: 100%;
+}
+
+.dailyDealContainer {
+	float: left;
+	margin: 1%;
+	width: 48%;
+	height: 500px;
+	text-align: center;
+	overflow: hidden;
+	color: var(--theme-reverse-color);
+	border-radius: 25px;
+}
+
+.dailyDealTitle {
+	position: relative;
+	font-size: 50px;
+	font-family: Garamond;
+	width: 100%;
+	height: 25%;
+	background-color: black;
+	color: white;
+}
+
+#dailyDealItem {
+	background-color: white;
+	color: black;
+	font-size: 30px;
+}
+
+.dailyDealDesc {
+	position: relative;
+	width: 100%;
+	height: 75%;
+	background-color: white;
+	color: black;
+	font-size: 20px;
+	font-family: Times New Roman, serif;
+}
+
+.dailyDealBackground {
+	max-width: 100%;
+	display: inline-block;
+	background-color: var(--theme-color);
+}
+
+/* Reviews */
+.commentContainer {
+	position: relative;
+	float: left;
+	margin: 1% 5%;
+	padding: 5px;
+	width: 65%;
+	height: 150px;
+	border-radius: 15px;
+	background-color: var(--main-color);
+}
+
+.commentPhoto {
+	position: relative;
+	height: 25%;
+}
+
+.commentPhoto ul {
+}
+
+.commentPhoto li {
+	font-size: 15px;
+	text-align: center;
+	list-style: none;
+	float: left;
+	display: in-line;
+	height: 5px;
+	line-height: 10px;
+	min-width: auto;
+	color: var(--theme-color);
+	color: var(--secondary-color);
+	font-family: Arial, sans-serif;
+	width: 30%;
+}
+
+.commentText {
+	height: 75%;
+	width: 95%;
+	margin: auto;
+	display: block;
+	color: var(--secondary-color);
+	color: #f3f3f3;
+	overflow: auto;
+}
+
+#leaveComment {
+	height: 90%;
+	width: 99%;
+	border-radius: 5px;
+}
+
+#reviewSubmit {
+	
+}
+
+#reviewDate {
+	text-align: left;
+
+}
+
+#reviewName {
+	text-align: center;
+}
+
+#reviewScore {
+	text-align: right;
+}
+
+/* Login */
+.input_box {
+	padding: 8px;
+	width: 200px;
+	margin: auto;
+	display: block;
+	margin-bottom: 5px;
+	border-radius: 7px;
+	border: solid 1px var(--main-color);
+}
+
+label {
+	font-family: Arial, sans-serif;
+	margin: auto;
+	display: block;
+	text-align: center;
+	color: var(--main-color);
+}
+
+input {
+	background-color: white;
+	margin: auto;
+	padding: 5px;
+	display: block;
+	border: none;
+	border-bottom: 1px solid var(--main-color);
+}
+
+input textarea:focus{
+	outline: none;
+	background-color: white;
+}
+
+#center_text {
+	font-family: Arial, sans-serif;
+	display: block;
+	margin: auto;
+	text-align: center;
+	color: var(--main-color);
+}
+
+#submit {
+	width: 100%;
+	background-color: var(--main-color);
+	color: var(--secondary-color);
+	border-radius: 2px;
+}
+
+#submit_div {
+	background-color: var(--main-color);
+}
+
+#create_account {
+	font-family: Arial, sans-serif;
+	padding: 5px;
+	margin: auto;
+	display: block;
+	text-align: center;
+	color: var(--secondary-color);
+}
+
+
+/* Footer */
+footer {
+	width: 100%;
+	margin: 45px 0;
+	height: 45px;
+	background-color: var(--main-color);
+	position: relative;
+	float: left;
+}
+
+.footerItem {
+	width: 20%;
+	height: 100%;
+	float: left;
+	margin: 0 15%;
+}
+
+#footerText {
+	position: relative;
+	font-size: 15px;
+	color: var(--secondary-color);
+	top: 35%;
+	text-align: center;
+}
