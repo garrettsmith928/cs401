@@ -1,5 +1,7 @@
 <?php
   session_start();
+  
+
 
   $email = $_POST['email'];
   $password = $_POST['password'];
@@ -12,32 +14,64 @@
   $zip = $_POST['zip'];
   $address = $street . ", " . $city . ", " . $state  . ", " . $zip;
   
+  $errors = array();
+  
+  $boxFill = array();
+  $boxFill['email'] = $email;
+  $boxFill['name1'] = $name;
+  $boxFill['phone'] = $phone;
+  $boxFill['street'] = $street;
+  $boxFill['city'] = $city;
+  $boxFill['state'] = $state;
+  $boxFill['zip'] = $zip;
+  
+  
+  
 //Create Error ARRAY
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-	//Add error to array
+	$errors[] = "Invalid email.";
 }
 
-if (password != passwordv){
-	//Add error to array
+
+if ($password != $passwordv){
+	$errors[] = "Passwords did not match.";
 }
-  
+ 
 if (strlen($address) < 8) {
-  $address = "";
+	$address = "";
 }
 
-//TODO IF ERROR ARRAY IS GREATER THAN 0 LET USER KNOW
+if (count($errors) > 0) {
+	$_SESSION['messages'] = $errors;
+	$_SESSION['boxFill'] = $boxFill;
+	$_SESSION['class'] = "printError";
+	header('Location: create_account.php');
+	exit;
+}
 
+	//Sanitize
+	$email = htmlspecialchars($email);
+	$email = strtolower($email);
+	$name =  htmlspecialchars($name);
+	$phone =  htmlspecialchars($phone);
+	$address =  htmlspecialchars($address);
+	
+	$password = hash('sha256', $password . '134b51i35fo12');
 
-  // check the email and password
-  require_once 'Dao.php';
-  $dao = new Dao();
-  $_SESSION['authenticated'] = $dao->createUser($email, $password, $name, $phone, $address);
+	// check the email and password
+	require_once 'Dao.php';
+	$dao = new Dao();
+	$_SESSION['authenticated'] = $dao->createUser($email, $password, $name, $phone, $address);
 
-  if ($_SESSION['authenticated']) {
-     header('Location: login.php');
-     exit;
-  } else { 
-     header('Location: create_account.php');
-     exit;
-  }
+	if ($_SESSION['authenticated']) {
+		header('Location: login.php');
+		exit;
+	} else {
+		$errors[] = "That username is already taken.";
+		$_SESSION['messages'] = $errors;
+		$_SESSION['boxFill'] = $boxFill;
+		$_SESSION['class'] = "printError";
+		header('Location: create_account.php');
+		exit;
+	}

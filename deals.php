@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('head.php');
 require_once('navbar.php');
 
@@ -45,8 +46,9 @@ dailyDealText('Friday', 'Mozeralla Sticks', 'Juicy Delectable Tator Tots<br>smot
 dailyDealImage('images/sticks.jpg');
 dailyDealImage('images/sticks.jpg');
 dailyDealText('Saturday', 'Mozeralla Sticks', 'Juicy Delectable Tator Tots<br>smothered in bacon and cheese');
-dailyDealImage('images/sticks.jpg');
 dailyDealText('Sunday', 'Mozeralla Sticks', 'Juicy Delectable Tator Tots<br>smothered in bacon and cheese');
+dailyDealImage('images/sticks.jpg');
+
 
 echo '</div>';
 

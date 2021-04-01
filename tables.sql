@@ -1,0 +1,15 @@
+CREATE TABLE users (
+	email VARCHAR(256) NOT NULL PRIMARY KEY,
+	password VARCHAR(64) NOT NULL,
+	name VARCHAR(256),
+    phone VARCHAR(20),
+	address VARCHAR(128)
+);
+
+CREATE TABLE menu (
+	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	item VARCHAR(256) NOT NULL,
+	description VARCHAR(512) NOT NULL,
+	price DECIMAL(6,2) NOT NULL,
+    age_restricted BOOLEAN
+);

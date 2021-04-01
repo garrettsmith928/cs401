@@ -1,11 +1,36 @@
+<?php
+session_start();
+?>
+
 <body>
+	<div id = "loginStatus">
+	<?php
+		if (isset($_SESSION['user'])) {
+			if (isset($_SESSION['user']['name']) and ($_SESSION['user']['name']) != ""){
+				echo '<p>Signed in as ' . $_SESSION['user']['name'] . '</p>';
+			} else {
+				echo '<p>Signed in as ' . $_SESSION['user']['email'] . '</p>';
+			}
+		} 
+	?>
+	</div>
 	<nav>
 		<div class = "bar" id = "topBar">
 		<ul>
-			<a href="ind.php"><img id = "icon" src = "images/icon.png" /></a>
-			<li id = "login">
-			<a href="login.php">Login</a>
-			</li>
+			<a href="index.php"><img id = "icon" src = "images/icon.png" /></a>
+			<?php
+			if (!isset($_SESSION['user'])) {
+				echo '
+				<li id = "login">
+				<a href="login.php">Login</a>
+				</li>';
+			} else {
+				echo '
+				<li id = "logout">
+				<a href="logout.php">Logout</a>
+				</li>';
+			}
+			?>
 			<li>
 			<a href="locations.php">Locations</a>
 			</li>
@@ -31,6 +56,10 @@
 			<li>
 			<a href="review.php">Review</a>
 			</li>
+			<li>
+			<a href="debug.php">Debug</a>
+			</li>
 		</ul>
 		</div>
 	</nav>
+	<div class = "pageBody">

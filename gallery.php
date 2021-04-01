@@ -8,7 +8,7 @@ function gallerySquare($src, $desc)
 	'<div class = "ratio2">
 		<div class = "ratioContainer" id = "img1">
 			<div class = "imageContainer">
-				<img class = "imgCrop" src = "' . $src . '" />
+				<img class = "imgCrop" src = "images/' . $src . '" />
 			</div>
 			<div class = "imageTextContainer">
 				<div class = "textCenteredOverImage" id = "galleryImageTitle">' . $desc . '</div>
@@ -17,13 +17,13 @@ function gallerySquare($src, $desc)
 	</div>';
 }
 
-gallerySquare('images/chickenSandwich.jpg', '12. Chicken Sandwich');
-gallerySquare('images/burger.jpg', '6. Super Cheese Burger');
-gallerySquare('images/food.jpg', '32. Super Sampler');
-gallerySquare('images/shake.jpg', '52. Fancy Milkshake');
-gallerySquare('images/sticks.jpg', '2. Gooey Mozzarella Sticks');
-gallerySquare('images/fries.jpg', '5. Fruity Mctooty Salad');
-gallerySquare('images/shake.jpg', '52. Fancy Milkshake');
+require_once 'Dao.php';
+$dao = new Dao();
+$menuItems = $dao->getMenuItems();
+
+foreach ($menuItems as $item){
+	gallerySquare($item['image'], $item['id'] . '. ' . $item['item']);
+}
 
 require_once('footer.php');
 ?>
