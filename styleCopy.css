@@ -1,23 +1,15 @@
 /* Variables */
 :root {
-	/*--main-color: #3f5746;*/
-    --main-color: #a92424;
-	/*--secondary-color: #fff996; */
-	--secondary-color: #ffd240;
+    --main-color: #3f5746;
+	--secondary-color: #fff996;
 	--dark-color:#3c5443;
-	/*--theme-color:#fff;
-	--theme-color:#ffffff;  c91414
+	--theme-color:#fff;
 	--theme-reverse-color:#000;
-	*/
-	--theme-color:#bb0404;
-	--theme-reverse-color:#bb0404;
 }
 
 /* Color Holder
-
     --main-color: #3f5746;
 	--secondary-color: #fff996;
-	
 */
 
 /* All */
@@ -34,7 +26,7 @@ a:visited {
 }
 
 a:hover {
-  color: #fff; /* Theme color */
+  color: var(--theme-color);
 }
 
 .ratio1 {
@@ -53,17 +45,14 @@ a:hover {
 }
 
 .pageSplit {
-	width: 1%;
+	width: 48%;
+	position: relative;
+	float: left;
 	margin: 1%;
-	display: table-cell;
-    vertical-align: top;
-	padding: 10px;
 }
 
-#parentHeight {
-	height: 100%;
-	position: relative;
-	border-radius: 7px;
+.splitCrop {
+	max-width: 100%;
 }
 
 .ratioContainer {
@@ -94,7 +83,6 @@ a:hover {
 	top: 0;
 	bottom: 0;
 	margin: auto;
-	left: 0;
 }
 
 .textCenteredOverImage {
@@ -118,7 +106,7 @@ body {
 }
 
 html {
-	background-color: white;
+	background-color: var(--theme-color);
 }
 
 /* Nav */
@@ -183,9 +171,7 @@ html {
 	float: right;
 	margin-right: 5%;
 	border-radius: 7px;
-	background-color:  var(--main-color);
-	background-color:  #a22;
-	/*background: linear-gradient(-180deg, rgba(0,0, 0,.2) 5%, rgba(0,0, 0, 0) 25%, rgba(0,0, 0,.4) 50%, rgba(255,255,255,.4));*/
+	background: linear-gradient(-180deg, var(--main-color) 5%, rgba(80,115, 80,.99) 25%, var(--main-color) 50%, rgba(40,80,40,.99));
 }
 
 #login li {
@@ -195,19 +181,9 @@ html {
 }
 
 #topBar li:hover {
-	/*background: linear-gradient(-180deg, rgba(0,0, 0,.1) 5%, rgba(0,0, 0, 0) 25%, rgba(0,0, 0,.2) 50%, rgba(255,255,255,.2));*/
+	background: linear-gradient(-180deg, var(--main-color) 5%, rgba(100,145, 100,.99) 25%, var(--main-color) 50%, rgba(50,90,50,.99));
 	background-color: var(--theme-reverse-color);
 	color: white;
-}
-
-li#test  {
-	font-size: 45px;
-	float: right;
-	background-color: var(--main-color);
-	color: var(--secondary-color);
-	margin-right: 10%;
-	font-family: "Sofia", sans-serif;
-	width: 22%;
 }
 
 #name {
@@ -272,7 +248,6 @@ li:hover {
 	color: rgba(255, 255, 255, 0.8);
 	font-size: 5vw;
 	font-family: Arial, sans-serif;
-	font-family: "Sofia", sans-serif;
 }
 
 
@@ -289,13 +264,11 @@ li:hover {
 	font-family: Arial, sans-serif;
 }
 
-a:link#menuLink,
-a:visited#menuLink {
-	font-family: "Sofia", sans-serif;
-	/*font-size: 2vw;*/
+#menuLink a:link,
+#menuLink a:visited {
+	font-size: 2vw;
 	color: rgba(255, 255, 255, 0.8);
 }
-
 
 #viewFullMenu {
 	position: relative;
@@ -348,13 +321,11 @@ a:visited#menuLink {
 	height: 50px;
 	background-color: var(--main-color);
 	color: var(--secondary-color);
-	background-color: var(--main-color);
-	/* background: linear-gradient(-180deg, var(--main-color) 5%, rgba(80,115, 80,.99) 25%, var(--main-color) 50%, rgba(40,80,40,.99)); */
+	background: linear-gradient(-180deg, var(--main-color) 5%, rgba(80,115, 80,.99) 25%, var(--main-color) 50%, rgba(40,80,40,.99));
 }
 
 .cateringOrderButton:hover {
-	/*background: linear-gradient(-180deg, var(--main-color) 5%, rgba(100,145, 100,.99) 25%, var(--main-color) 50%, rgba(50,90,50,.99));*/
-	background-color: var(--main-color);
+	background: linear-gradient(-180deg, var(--main-color) 5%, rgba(100,145, 100,.99) 25%, var(--main-color) 50%, rgba(50,90,50,.99));
 	background-color: var(--theme-reverse-color);
 	color: white;
 }
@@ -401,18 +372,13 @@ a:visited#menuLink {
 	font-size: 30px;
 }
 
-#dailyDealText{
-	width: 50%;
-	margin: auto;
-}
-
 .dailyDealDesc {
 	position: relative;
+	width: 100%;
 	height: 75%;
 	color: var(--main-color);
 	font-size: 20px;
 	font-family: Times New Roman, serif;
-	
 }
 
 .dailyDealBackground {
@@ -428,16 +394,16 @@ a:visited#menuLink {
 	padding: 5px;
 	width: 65%;
 	height: 150px;
-	border-radius: 5px;
+	border-radius: 15px;
 	background-color: var(--main-color);
 }
 
 #commentContainerLoginStatus {
-	height: 20px;
-	border-radius: 5px;
+	height: 40px;
+	border-radius: 15px;
 	border: 1px var(--main-color) solid;
-	background-color: var(--main-color);
-	color: white;
+	background-color: white;
+	color: var(--main-color);
 }
 
 #commentContainerTerms {
@@ -446,7 +412,6 @@ a:visited#menuLink {
 	border: 1px var(--main-color) solid;
 	background-color: white;
 	color: var(--main-color);
-	left: 16.25%;
 }
 
 
@@ -610,7 +575,6 @@ input textarea:focus{
 .orderContainer {
 	float: left;
 	width: 100%;
-	margin-bottom: 10px;
 }
 
 .menuDivContainer {
@@ -627,7 +591,7 @@ input textarea:focus{
 	margin: 1%;
 	float: left;
 	width: 25%;
-	/*height: 700px;*/
+	height: 500px;
 	border-radius: 10px;
 	padding: 10px;
 	background-color: var(--main-color);
@@ -636,13 +600,9 @@ input textarea:focus{
 	
 	position: fixed;
 	float: right;
-	top: 55%;
+	top: 50%;
 	right: 5%;
 	transform: translate(-5%, -50%);
-}
-
-.cartText {
-	font-size: .75vw;
 }
 
 .menuDiv {
@@ -671,7 +631,7 @@ input textarea:focus{
 	position: relative;
 }
 
-.menuName {
+#menuName {
 	flex: 6;
 	padding: 5px;
 	text-align: center;
@@ -693,8 +653,8 @@ input textarea:focus{
 }
 
 #menuAddToCart {
-	flex: 2;
-	padding: 2px;
+	flex: 3;
+	padding: 5px;
 	display: flex;
 }
 
@@ -709,7 +669,7 @@ input textarea:focus{
 	height: 30px;
 }
 
-.menuAddToCartNumber {
+#menuAddToCartNumber {
 	background-color: transparent;
 	color: var(--main-color);
 }
@@ -727,7 +687,7 @@ input textarea:focus{
 /* Footer */
 footer {
 	width: 100%;
-	margin: 0;
+	margin: 45px 0;
 	height: 45px;
 	background-color: var(--main-color);
 	position: relative;
@@ -757,4 +717,47 @@ footer {
 	border-radius: 10px;
 	border: solid rgb(255, 0, 0) 1px;
 	color: rgb(255, 0, 0);
+}
+
+/* Form jquery */
+form {
+  padding: 20px;
+  background: #2c3e50;
+  color: #fff;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+form label,
+form input,
+form button {
+  border: 0;
+  margin-bottom: 3px;
+  display: block;
+  width: 100%;
+}
+
+form input {
+  height: 25px;
+  line-height: 25px;
+  background: #fff;
+  color: #000;
+  padding: 0 6px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+form button {
+  height: 30px;
+  line-height: 30px;
+  background: #e67e22;
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+form .error {
+  color: #ff0000;
 }

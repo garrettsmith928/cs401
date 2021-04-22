@@ -1,8 +1,11 @@
 <?php
-session_start();
 require_once('head.php');
 require_once('navbar.php');
 ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="fade.js"></script>
+
 <?php
 if (isset($_SESSION['messages'])) {
   
@@ -32,11 +35,12 @@ echo '
 
 <br/>
 <div>
-	<h1 id = "center_text">Create your account</h1>
+	<h1 id = "center_text">Create your account </h1>
 	<p id = "center_text">Only boxes with * are required</p>
 </div>
 <br/>
-<form method="post" action="create_account_handler.php">
+
+<form id="accountForm" method="post" action="create_account_handler.php" name="registration">
 
 <?php
 createInputBox('Email*', 'email', 'text');
@@ -49,7 +53,6 @@ createInputBox('City', 'city', 'text');
 createInputBox('State', 'state', 'text');
 createInputBox('Zip', 'zip', 'text');
 ?>
-
 <div class="input_box" id = "submit_div">
 	<input id = "submit" type="submit" value="Create Account">
 </div>

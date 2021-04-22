@@ -37,6 +37,9 @@ session_start();
 			<li>
 			<a href="order.php">Order Online</a>
 			</li>
+			<li id="test">
+				<a href="index.php">Restaurant's</a>
+			</li>
 		</ul>
 		</div>
 		<div class = "bar" id = "botBar">

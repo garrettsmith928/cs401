@@ -130,7 +130,35 @@ class Dao {
 			//$this->logger->LogInfo("Menu Items: " . print_r($data));
 			return $data;
 		} catch(Exception $e) {
-			$this->logger->LogInfo("CREATE USER TRUE STATUS: " . print_r($e,1));
+			$this->logger->LogInfo("Error grabbing menu items: " . print_r($e,1));
+			echo print_r($e,1);
+			exit;
+		}
+	}
+	
+	//Retrives all carousel images.
+	public function getCarouselItems () {
+		$connection = $this->getConnection();
+		$this->logger->LogInfo("Grabbing carousel items...");
+		try {
+			$data = $connection->query("SELECT * FROM carousel")->fetchAll();
+			return $data;
+		} catch(Exception $e) {
+			$this->logger->LogInfo("Error grabbing carousel images: " . print_r($e,1));
+			echo print_r($e,1);
+			exit;
+		}
+	}
+	
+	//Retrives all daily deals.
+	public function getDailyDeals () {
+		$connection = $this->getConnection();
+		$this->logger->LogInfo("Grabbing daily deals...");
+		try {
+			$data = $connection->query("SELECT * FROM daily_deals ORDER BY dayNum")->fetchAll();
+			return $data;
+		} catch(Exception $e) {
+			$this->logger->LogInfo("Error grabbing carousel images: " . print_r($e,1));
 			echo print_r($e,1);
 			exit;
 		}

@@ -3,38 +3,36 @@ require_once('head.php');
 require_once('navbar.php');
 
 $commentInfo = "";
+$name = "";
 if (isset($_SESSION['user'])) {
-	$commentInfo = 'Logged in as ' . $_SESSION['user']['email'] . ' with display name: ' . $_SESSION['user']['name'];
+	$name = $_SESSION['user']['name'];
+	
+	echo '
+	<form method="post" action="review_handler.php">
+	<div class = "commentContainer" id = "leaveCommentContainer">
+		<div class = "commentPhoto" id = "leaveCommentBar">
+		  <input class = "commentFlex" type="checkbox" id="displayName" name="displayName" value="useName">
+		  <label class = "commentFlex" for="displayName"><b>Use name: </b>' . $name . '</label>
+		  <input class = "commentFlex" type="submit" value="Submit" id = "commentSubmit">
+		  <select class = "commentFlex" name="score" id="score">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		  </select>
+		  <label class = "commentFlex" for="score" id = "scoreLabel">Score</label>	  
+		</div>
+		<div class = "commentText">
+			<textarea id = "leaveCommentBox" name = "leaveCommentBox" rows="4" cols="50" maxlength="1024"></textarea>
+		</div>
+	</div>
+	</form>';
 } else {
-	$commentInfo = 'Please <a href="login.php">log in</a> to comment';
+	echo '
+	<div class="commentContainer" id = "commentContainerLoginStatus"><div id = "center_text"><a href="login.php">Please <u>log in</u> to comment</div></div>';
 }
-
-echo '
-<div class="commentContainer" id = "commentContainerLoginStatus"><div id = "center_text">' .
-$commentInfo
-. '</div></div>';
 ?>
-
-<form method="post" action="review_handler.php">
-<div class = "commentContainer" id = "leaveCommentContainer">
-	<div class = "commentPhoto" id = "leaveCommentBar">
-	  <input class = "commentFlex" type="checkbox" id="displayName" name="displayName" value="useName">
-	  <label class = "commentFlex" for="displayName"><b>Use name</b></label>
-	  <input class = "commentFlex" type="submit" value="Submit" id = "commentSubmit">
-	  <select class = "commentFlex" name="score" id="score">
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-		<option value="4">4</option>
-		<option value="4">5</option>
-	  </select>
-	  <label class = "commentFlex" for="score" id = "scoreLabel">Score</label>	  
-	</div>
-	<div class = "commentText">
-		<textarea id = "leaveCommentBox" name = "leaveCommentBox" rows="4" cols="50" maxlength="1024"></textarea>
-	</div>
-</div>
-</form>
 
 <?php
 function comment($date, $name, $score, $txt)
@@ -46,7 +44,7 @@ echo '
 			<b>
 			<li id = "reviewDate">' . $date . '</li>
 			<li id = "reviewName">' . $name . '</li>
-			<li id = "reviewScore">' . $score . '</li>
+			<li id = "reviewScore">' . $score . '/5</li>
 			</b>
 		</ul>
 	</div>

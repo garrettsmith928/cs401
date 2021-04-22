@@ -12,3 +12,12 @@
 		</a>
 	</footer>
 </body>
+
+<script>
+var x = document.URL.lastIndexOf("/");
+var currentURL = document.URL.substring(x+1, document.URL.length);
+currentURL = currentURL.trim();
+document.querySelectorAll('a[href="' + currentURL + '"]').forEach(function(element) {
+  element.style.color = '#fff';
+});
+</script>

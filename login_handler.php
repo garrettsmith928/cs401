@@ -22,8 +22,8 @@ if ($_SESSION['authenticated']) {
 	exit;
 } else {
 	$errors = array();
-	$_SESSION['messages'] = $errors;
 	$errors[] = "Please verify email and password.";
+	$_SESSION['messages'] = $errors;
 	header('Location: login.php');
 	exit;
 }

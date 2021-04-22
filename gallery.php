@@ -24,6 +24,10 @@ $menuItems = $dao->getMenuItems();
 foreach ($menuItems as $item){
 	gallerySquare($item['image'], $item['id'] . '. ' . $item['item']);
 }
+?>
 
+<hr style = "visibility:hidden;">
+
+<?php
 require_once('footer.php');
 ?>

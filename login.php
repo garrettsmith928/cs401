@@ -3,6 +3,18 @@ require_once('head.php');
 require_once('navbar.php');
 ?>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="fade.js"></script>
+
+<?php
+if (isset($_SESSION['messages'])) {
+  foreach ($_SESSION['messages'] as $message) {
+	echo "<div class= '" . $_SESSION['class'] . "' >{$message}</div>";
+  }
+  unset($_SESSION['messages']);
+}
+?>
+
 <html>
 	<head>
 	</head>
